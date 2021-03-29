@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/black.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+
+		<style type="text/css">
+			.block-inline{
+				display: inline-block;
+				width: 46%;
+				padding: 5px;
+			}
+			.size{
+				width: 50%
+				height: 500px;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>Slide 1
+					<h1>First Slide!</h1>
+					<p style="font-weight: bold;">custom text styles</p>
+					<img src="http://media.giphy.com/media/JtrHPBNTg7KM0/giphy.gif">
+				</section>
+				<section>Slide 2
+					<h1>Hoooray Emojis</h1>
+					<div class="block">
+						<span style='font-size:100px;'>&#9757;</span>
+						<p>&#9757;</p>
+						<span style='font-size:100px;'>&#127748;</span>
+					</div>
+					
+
+				</section>
+				<section> Slide 3
+					<h1>Images</h1>
+					<div class="block-inline">
+						<img  class="size" src="https://media.giphy.com/media/wAxlCmeX1ri1y/giphy.gif">
+					</div>
+					<div class="block-inline">
+						<img class="size" src="https://www.sciencenews.org/wp-content/uploads/2019/01/013019_JR_panda-diet_feat.jpg">
+					</div>
+					
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

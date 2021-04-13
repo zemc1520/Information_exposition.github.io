@@ -1,0 +1,470 @@
+<!doctype html>
+<html>
+	<head>
+		<style id="vega-tooltip-style"></style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Reveal.Js intro</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/sky.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+
+		<!-- 		loading vega -->		
+		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+
+		<style id="vega-embed-style"></style>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>How To Use Reveal . JS</h3>
+					<p style="color:#CFB87C; font-weight:bold;">Zev McMillen</p>
+					<p style="color:#565A5C">Week 10 assignment</h5>
+				</section>
+				
+
+				<section>
+					<h3>Objectives</h3>
+					<h4>How To Start?</h4>
+					<ul>
+						<li>
+							Upload the proper links and api's with reveal to set up html presentation structure. <em><a href = "https://revealjs.com/links/">Syntax</a></em>
+						</li>
+						<li>
+							How to customize your reveal to the way you want. <em><a href = "https://revealjs.com/themes/">Syntax</a></em>
+						</li>
+						<li>
+							Using Reveal.Js data visualizations and animations. <em><a href = "https://revealjs.com/themes/">Syntax</a></em>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Start of a vertical slide -->
+				<section>
+					<section>
+						<h3>Setting Up Reveal . Js</h3>
+						<p>
+							We first need to add the proper links and api calls to our html to properly load the reveal.js css styles. This is crucial to designing the website into a prensentation type forum. 
+						</p>
+					</section>
+
+					<section>
+						<h3>Meta Tags</h3>
+						<pre><code data-trim data-line-numbers= 1,2><script type="text/template">
+							<meta charset="utf-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+							<title>Reveal.Js intro</title>
+
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/sky.min.css" id="theme">
+
+							<!-- Theme used for syntax highlighted code -->
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+							</script>
+						</pre></code>						
+					</section>
+					<section>
+						<h3>Meta Tags</h3>
+						<pre><code data-trim data-line-numbers= 2><script type="text/template">
+							<meta charset="utf-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+							<title>Reveal.Js intro</title>
+
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/sky.min.css" id="theme">
+
+							<!-- Theme used for syntax highlighted code -->
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+							</script>
+						</pre></code>
+						<p>
+							This meta tag is especially important becuase it allows our reveal.js presentation to fit the size of the screen responsively.
+						</p>
+					</section>
+					<section>
+						<h3>Links</h3>
+						<pre><code data-trim data-line-numbers= 6-8><script type="text/template">
+							<meta charset="utf-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+							<title>Reveal.Js intro</title>
+
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/sky.min.css" id="theme">
+
+							<!-- Theme used for syntax highlighted code -->
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+							</script>
+						</pre></code>
+						<p>
+							These links access the reveal.js css for our <a href = "https://revealjs.com/markup/">reset</a>, <a href = "https://revealjs.com/markup/">reveal</a>, and <a href = "https://revealjs.com/themes/">theme</a>.
+						</p>
+					</section>
+
+					<section>
+						<h3>Links</h3>
+						<pre><code data-trim data-line-numbers= 10,11><script type="text/template">
+							<meta charset="utf-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+							<title>Reveal.Js intro</title>
+
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/sky.min.css" id="theme">
+
+							<!-- Theme used for syntax highlighted code -->
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+							</script>
+						</pre></code>
+						<p>
+							This <a href = "https://revealjs.com/code/">highlight-theme</a> link downloads the css for highlighted text and code throughout the presentation. This is an important link to allow yourself to place code blocks inside the reveal.js presentaiton. 
+						</p>
+					</section>
+					<section>
+						<h3>Scripts</h3>
+						<pre><code data-trim data-line-numbers= 1-5><script type="text/template">
+						<script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js">
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js">
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js">
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js">
+						<script>
+							// More info about initialization & config:
+							// - https://revealjs.com/initialization/
+							// - https://revealjs.com/config/
+							Reveal.initialize({
+								hash: true,
+								slideNumber: 'c/t',
+								// Learn about plugins: https://revealjs.com/plugins/
+								plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+							});
+						</script>
+						</pre></code>
+						<p>
+							These are the script tag plugins that allow us to use the javascript styling from reveal, notes, and highlights. 
+						</p>
+
+					</section>
+					<section>
+						<h3>Scripts</h3>
+						<pre><code data-trim data-line-numbers= 6-15><script type="text/template">
+						<script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js">
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js">
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js">
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js">
+						<script>
+							// More info about initialization & config:
+							// - https://revealjs.com/initialization/
+							// - https://revealjs.com/config/
+							Reveal.initialize({
+								hash: true,
+								slideNumber: 'c/t',
+								// Learn about plugins: https://revealjs.com/plugins/
+								plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+							});
+						</script>
+						</pre></code>
+						<p>
+							This is the javascript <a href = "https://revealjs.com/config/">configuration</a> and <a href = "https://revealjs.com/initialization/">initialization</a> code. This allows the javascript plugins to properly work within our html page. 
+						</p>
+
+					</section>
+				</section>
+				<!-- End of a vertical slide -->
+
+
+				<section>
+					<section>
+						<h3>Including Code Blocks Into Your Presentation</h3>
+						<ul>
+							<li>Proper Tagging</li>
+							<li>Include Code</li>
+							<li>Reveal!</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Proper Tagging</h3>
+						<pre><code data-trim data-noescape><script type="text/template">
+							<pre><code data-trim data-line-numbers= 6-15 or 1,2><script type="text/template">
+								//content
+
+							*Close tags
+							</script>
+						</code></pre>
+						<p>
+							This is the proper tagging to create a code block through reveal.js. 
+						</p>
+
+					</section>
+					<section>
+						<h3>
+							Include Your desired code block
+						</h3>
+						<pre><code data-trim data-line-number = 2><script type="text/template">
+							<pre><code data-trim data-line-numbers= 6-15 or 1,2><script type="text/template">
+								//content
+
+							*Close tags
+							</script>
+						</code></pre>
+						<p>
+							Where the //content is that is where you should put your desired code block
+						</p>
+					</section>
+					<section>
+						<h3>
+							<strong>Reveal!</strong>
+							<p>
+								Thats all!!! 
+							</p>
+						</h3>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>
+							Create a virtical slide!
+						</h3>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape><script type="text/template">
+							<section>
+								<section>
+									<h3>
+										First virtical slide
+									</h3>
+								</section>
+								<section>
+									<h3>
+										Second virtical slide
+									</h3>
+								</section>
+							</section>
+							</script>
+						</code></pre>
+						<p>If you place a section (slide) inside another section tag then the slides will layer on top of one another creating a virtical slide effect. To move to the next horizontal slide just close both section taggs and add a new section (slide).</p>
+					</section>
+					<section>
+						<h3>
+							EASY!!!
+						</h3>
+					</section>
+				</section>
+				<section>
+					<style type="text/css">
+						img{
+							width: 300px;
+							height: 300px;
+						}
+					</style>
+					<h3>
+						Cool visualizations with reveal!
+					</h3>
+					<img src="https://i.gifer.com/UPTO.gif">
+					<img src="https://i.gifer.com/fxUK.gif">
+				</section>
+				<section>
+					<section>
+						<div id="vis"></div>
+							
+						
+						<script type="text/javascript">
+							var spec = {	
+
+						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+						  "config": {
+						    "view": {
+						      "continuousHeight": 300,
+						      "continuousWidth": 400
+						    }
+						  },
+						  "data": {
+						    "url": "https://vega.github.io/vega-datasets/data/cars.json"
+						  },
+						  "encoding": {
+						    "color": {
+						      "field": "Origin",
+						      "type": "nominal"
+						    },
+						    "x": {
+						      "field": "Horsepower",
+						      "type": "quantitative"
+						    },
+						    "y": {
+						      "field": "Miles_per_Gallon",
+						      "type": "quantitative"
+						    }
+						  },
+						  "mark": "point"
+						};
+				  /* JSON dump of your chart's spec */
+							var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+							vegaEmbed("#vis", spec, opt);
+				// More info about initialization & config:
+							// - https://revealjs.com/initialization/
+							// - https://revealjs.com/config/
+							
+							
+						</script>
+						<p>
+							How it works...
+						</p>
+					</section>
+					<section>
+						<h3>Links and Script plugins</h3>
+						<pre><code data-trim data-line-numbers = 1,14-19><script type="text/template">
+							<style id="vega-tooltip-style"></style>
+							<meta charset="utf-8">
+							<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+							<title>Reveal.Js intro</title>
+
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/sky.min.css" id="theme">
+
+							<!-- Theme used for syntax highlighted code -->
+							<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+
+							<!-- 		loading vega -->		
+							<script src="https://cdn.jsdelivr.net/npm/vega@3"><script>
+							<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"><script>
+							<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"><script>
+
+							<style id="vega-embed-style"></style>
+							</script>
+						</code></pre>
+					</section>
+					<section>
+						<h3>
+							Actual Visulization Code
+						</h3>
+						<pre><code data-trim data-line-numbers = 1-32><script type="text/template">
+						<div id="vis"></div>
+							
+						
+						<script type="text/javascript">
+							var spec = {	
+
+						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+						  "config": {
+						    "view": {
+						      "continuousHeight": 300,
+						      "continuousWidth": 400
+						    }
+						  },
+						  "data": {
+						    "url": "https://vega.github.io/vega-datasets/data/cars.json"
+						  },
+						  "encoding": {
+						    "color": {
+						      "field": "Origin",
+						      "type": "nominal"
+						    },
+						    "x": {
+						      "field": "Horsepower",
+						      "type": "quantitative"
+						    },
+						    "y": {
+						      "field": "Miles_per_Gallon",
+						      "type": "quantitative"
+						    }
+						  },
+						  "mark": "point"
+						};
+				  		/* JSON dump of your chart's spec */
+							var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+							vegaEmbed("#vis", spec, opt);
+						// More info about initialization & config:
+						// - https://revealjs.com/initialization/
+						// - https://revealjs.com/config/
+							</script>
+						</code></pre>
+						<p>
+							This is the data and set up of the visualization. Vega is extreamly powerful becuase you can organize your data from within the HTML. <em><a href = "https://vega.github.io">Sources</a></em>
+						</p>
+					</section>
+					<section>
+						<h3>
+							JSON and DOM manipulation
+						</h3>
+						<pre><code data-trim data-line-numbers = 33-38><script type="text/template">
+						<div id="vis"></div>
+							
+						
+						<script type="text/javascript">
+							var spec = {	
+
+						  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+						  "config": {
+						    "view": {
+						      "continuousHeight": 300,
+						      "continuousWidth": 400
+						    }
+						  },
+						  "data": {
+						    "url": "https://vega.github.io/vega-datasets/data/cars.json"
+						  },
+						  "encoding": {
+						    "color": {
+						      "field": "Origin",
+						      "type": "nominal"
+						    },
+						    "x": {
+						      "field": "Horsepower",
+						      "type": "quantitative"
+						    },
+						    "y": {
+						      "field": "Miles_per_Gallon",
+						      "type": "quantitative"
+						    }
+						  },
+						  "mark": "point"
+						};
+				  		/* JSON dump of your chart's spec */
+							var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+							vegaEmbed("#vis", spec, opt);
+						// More info about initialization & config:
+						// - https://revealjs.com/initialization/
+						// - https://revealjs.com/config/
+							</script>
+						</code></pre>
+						<p>
+							This part initializes and configures the visual. This is done by creatinga  variable incasing the calculation or operation and then <a href = "https://vega.github.io/vega-lite/usage/embed.html">vegaEmbed</a> into the HTML
+						</p>
+					</section>
+				</section>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
+

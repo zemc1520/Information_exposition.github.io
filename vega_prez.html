@@ -1,0 +1,574 @@
+<!doctype html>
+<html>
+	<head>
+		<style id="vega-tooltip-style"></style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Reveal.Js intro</title>
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reset.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/sky.min.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/monokai.min.css" id="highlight-theme">
+
+		<!-- 		loading vega -->		
+		<script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+
+		<style id="vega-embed-style"></style>
+
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h3>Vega Visualizations</h3>
+					<p style="color:#CFB87C; font-weight:bold;">Zev McMillen</p>
+					<p style="color:#565A5C">Week 11 assignment</h5>
+				</section>
+				
+
+				<section>
+					<h3>Vega</h3>
+					
+					<ul>
+						<li>
+							Proper Vega links and requests. <em><a href = "https://vega.github.io/vega-lite/">Syntax</a></em>
+						</li>
+						<li>
+							Trouble Shooting. <em><a href = "https://vega.github.io/vega/">Vega</a></em>
+						</li>
+						<li>
+							Configure/Present visual. <em><a href = "https://vega.github.io/vega/docs/config/">Syntax</a></em>
+						</li>
+					</ul>
+				</section>
+
+				<!-- Start of a vertical slide -->
+				<section>
+					<section data-auto-animate>
+						<div id="vis1"></div>
+							
+						
+						<script type="text/javascript">
+							var spec = {
+							  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+							  "width": 300, "height": 200,
+							  "data": {"url": "https://vega.github.io/vega-datasets/data/unemployment-across-industries.json"},
+							  "mark": "area",
+							  "encoding": {
+							    "x": {
+							      "timeUnit": "yearmonth", "field": "date",
+							      "axis": {"domain": false, "format": "%Y", "tickSize": 0}
+							    },
+							    "y": {
+							      "aggregate": "sum", "field": "count",
+							      "axis": null,
+							      "stack": "center"
+							    },
+							    "color": {"field":"series", "scale":{"scheme": "category20b"}}
+							  }
+							};
+
+
+				  /* JSON dump of your chart's spec */
+							var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+							vegaEmbed("#vis1", spec, opt);
+				// More info about initialization & config:
+							// - https://revealjs.com/initialization/
+							// - https://revealjs.com/config/
+						</script>
+					</section>
+
+					<section data-auto-animate>
+						<h3>Vega Scripts</h3>
+						<pre><code data-trim data-line-numbers= 4-6><script type="text/template">
+							<style id="vega-tooltip-style"></style>
+		
+							<!-- 		loading vega -->		
+							<script src="https://cdn.jsdelivr.net/npm/vega@3"><script>
+							<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"><script>
+							<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"><script>
+
+							<style id="vega-embed-style"></style>
+							
+							</script>
+						</pre></code>
+						<p>
+							These are the script tags that will request the vega visual javascripts.
+						</p>						
+					</section>
+					<section data-auto-animate>
+						<h3>Vega Style Tags</h3>
+						<pre><code data-trim data-line-numbers= 1,8><script type="text/template">
+							<style id="vega-tooltip-style"></style>
+		
+							<!-- 		loading vega -->		
+							<script src="https://cdn.jsdelivr.net/npm/vega@3"><script>
+							<script src="https://cdn.jsdelivr.net/npm/vega-lite@2"><script>
+							<script src="https://cdn.jsdelivr.net/npm/vega-embed@3"><script>
+
+							<style id="vega-embed-style"></style>
+							</script>
+						</pre></code>						
+						<p>
+							These are the style tags that import the proper css files based off the requests from our scripts tags. The css is able to be used by using the same id and classes that apear in the <em><a href = "https://vega.github.io/vega/docs/marks/">css documentation</a></em>.
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>Actual visual code</h3>
+						<pre><code data-trim data-line-numbers= 5-21><script type="text/template">
+							<div id="vis1"></div>
+								
+							
+							<script type="text/javascript">
+								var spec = {
+								  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+								  "width": 300, "height": 200,
+								  "data": {"url": "https://vega.github.io/vega-datasets/data/unemployment-across-industries.json"},
+								  "mark": "area",
+								  "encoding": {
+								    "x": {
+								      "timeUnit": "yearmonth", "field": "date",
+								      "axis": {"domain": false, "format": "%Y", "tickSize": 0}
+								    },
+								    "y": {
+								      "aggregate": "sum", "field": "count",
+								      "axis": null,
+								      "stack": "center"
+								    },
+								    "color": {"field":"series", "scale":{"scheme": "category20b"}}
+								  }
+								};
+
+
+					 			/* JSON dump of your chart's spec */
+								var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+								vegaEmbed("#vis1", spec, opt);
+								// More info about initialization & config:
+								// - https://revealjs.com/initialization/
+								// - https://revealjs.com/config/
+							<script>
+							</script>
+						</pre></code>
+						<p>
+							This is the Javascript code that manipulates the chart and the data being used.
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>Actual visual code</h3>
+						<pre><code data-trim data-line-numbers= 5-9><script type="text/template">
+							<div id="vis1"></div>
+
+							<script>
+					 			/* JSON dump of your chart's spec */
+								var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+								vegaEmbed("#vis1", spec, opt);
+								// More info about initialization & config:
+								// - https://revealjs.com/initialization/
+								// - https://revealjs.com/config/
+							<script>
+							</script>
+						</pre></code>
+						<p>
+							This is the javascript that <em><a href = "https://revealjs.com/initialization/">initializes </a></em>the vega data set and <em><a href = "https://revealjs.com/config/">configures</a></em> it (embed) within our reveal.js presentation.
+						</p>
+					</section>
+				</section>
+				<!-- End of a vertical slide -->
+				<section>
+					<section data-auto-animate>
+						<div id="vis2"></div>
+
+						<script type="text/javascript">
+					    var spec = {
+						  "$schema": "https://vega.github.io/schema/vega/v5.json",
+						  "description": "A population pyramid showing U.S. demographics from 1850 to 2000.",
+						  "height": 400,
+						  "padding": 5,
+
+						  "signals": [
+						    { "name": "chartWidth", "value": 300 },
+						    { "name": "chartPad", "value": 20 },
+						    { "name": "width", "update": "2 * chartWidth + chartPad" },
+						    { "name": "year", "value": 2000,
+						      "bind": {"input": "range", "min": 1850, "max": 2000, "step": 10} }
+						  ],
+
+						  "data": [
+						    {
+						      "name": "population",
+						      "url": "https://vega.github.io/vega-datasets/data/population.json"
+						    },
+						    {
+						      "name": "popYear",
+						      "source": "population",
+						      "transform": [
+						        {"type": "filter", "expr": "datum.year == year"}
+						      ]
+						    },
+						    {
+						      "name": "males",
+						      "source": "popYear",
+						      "transform": [
+						        {"type": "filter", "expr": "datum.sex == 1"}
+						      ]
+						    },
+						    {
+						      "name": "females",
+						      "source": "popYear",
+						      "transform": [
+						        {"type": "filter", "expr": "datum.sex == 2"}
+						      ]
+						    },
+						    {
+						      "name": "ageGroups",
+						      "source": "population",
+						      "transform": [
+						        { "type": "aggregate", "groupby": ["age"] }
+						      ]
+						    }
+						  ],
+
+						  "scales": [
+						    {
+						      "name": "y",
+						      "type": "band",
+						      "range": [{"signal": "height"}, 0],
+						      "round": true,
+						      "domain": {"data": "ageGroups", "field": "age"}
+						    },
+						    {
+						      "name": "c",
+						      "type": "ordinal",
+						      "domain": [1, 2],
+						      "range": ["#d5855a", "#6c4e97"]
+						    }
+						  ],
+
+						  "marks": [
+						    {
+						      "type": "text",
+						      "interactive": false,
+						      "from": {"data": "ageGroups"},
+						      "encode": {
+						        "enter": {
+						          "x": {"signal": "chartWidth + chartPad / 2"},
+						          "y": {"scale": "y", "field": "age", "band": 0.5},
+						          "text": {"field": "age"},
+						          "baseline": {"value": "middle"},
+						          "align": {"value": "center"},
+						          "fill": {"value": "#000"}
+						        }
+						      }
+						    },
+						    {
+						      "type": "group",
+
+						      "encode": {
+						        "update": {
+						          "x": {"value": 0},
+						          "height": {"signal": "height"}
+						        }
+						      },
+
+						      "scales": [
+						        {
+						          "name": "x",
+						          "type": "linear",
+						          "range": [{"signal": "chartWidth"}, 0],
+						          "nice": true, "zero": true,
+						          "domain": {"data": "population", "field": "people"}
+						        }
+						      ],
+
+						      "axes": [
+						        {"orient": "bottom", "scale": "x", "format": "s", "title": "Females"}
+						      ],
+
+						      "marks": [
+						        {
+						          "type": "rect",
+						          "from": {"data": "females"},
+						          "encode": {
+						            "enter": {
+						              "x": {"scale": "x", "field": "people"},
+						              "x2": {"scale": "x", "value": 0},
+						              "y": {"scale": "y", "field": "age"},
+						              "height": {"scale": "y", "band": 1, "offset": -1},
+						              "fillOpacity": {"value": 0.6},
+						              "fill": {"scale": "c", "field": "sex"}
+						            }
+						          }
+						        }
+						      ]
+						    },
+						    {
+						      "type": "group",
+
+						      "encode": {
+						        "update": {
+						          "x": {"signal": "chartWidth + chartPad"},
+						          "height": {"signal": "height"}
+						        }
+						      },
+
+						      "scales": [
+						        {
+						          "name": "x",
+						          "type": "linear",
+						          "range": [0, {"signal": "chartWidth"}],
+						          "nice": true, "zero": true,
+						          "domain": {"data": "population", "field": "people"}
+						        }
+						      ],
+
+						      "axes": [
+						        {"orient": "bottom", "scale": "x", "format": "s", "title": "Males"}
+						      ],
+
+						      "marks": [
+						        {
+						          "type": "rect",
+						          "from": {"data": "males"},
+						          "encode": {
+						            "enter": {
+						              "x": {"scale": "x", "field": "people"},
+						              "x2": {"scale": "x", "value": 0},
+						              "y": {"scale": "y", "field": "age"},
+						              "height": {"scale": "y", "band": 1, "offset": -1},
+						              "fillOpacity": {"value": 0.6},
+						              "fill": {"scale": "c", "field": "sex"}
+						            }
+						          }
+						        }
+						      ]
+						    }
+						  ]
+						};
+
+						/* JSON dump of your chart's spec */
+							var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+							vegaEmbed("#vis2", spec, opt);
+				// More info about initialization & config:
+							// - https://revealjs.com/initialization/
+							// - https://revealjs.com/config/
+						</script>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							How to add controls on your visual
+						</h3>
+						<pre><code data-trim data-line-numbers= 1>
+							<script type="text/template">
+							"signals": [
+							    { "name": "chartWidth", "value": 300 },
+							    { "name": "chartPad", "value": 20 },
+							    { "name": "width", "update": "2 * chartWidth + chartPad" },
+							    { "name": "year", "value": 2000,
+							      "bind": {"input": "range", "min": 1850, "max": 2000, "step": 10} }
+							  ],
+							</script>
+						</code></pre>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							How to add controls on your visual
+						</h3>
+						<pre><code data-trim data-line-numbers= 5>
+							<script type="text/template">
+							"signals": [
+							    { "name": "chartWidth", "value": 300 },
+							    { "name": "chartPad", "value": 20 },
+							    { "name": "width", "update": "2 * chartWidth + chartPad" },
+							    { "name": "year", "value": 2000,
+							      "bind": {"input": "range", "min": 1850, "max": 2000, "step": 10} }
+							  ],
+							</script>
+						</code></pre>
+						<p>
+							This places the defualt visual of what you want your input scaler to be. <em><a href="https://vega.github.io/vega/docs/signals/">"name", "value" styntax</a></em>
+						</P>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							How to add controls on your visual
+						</h3>
+						<pre><code data-trim data-line-numbers= 6>
+							<script type="text/template">
+							"signals": [
+							    { "name": "chartWidth", "value": 300 },
+							    { "name": "chartPad", "value": 20 },
+							    { "name": "width", "update": "2 * chartWidth + chartPad" },
+							    { "name": "year", "value": 2000,
+							      "bind": {"input": "range", "min": 1850, "max": 2000, "step": 10} }
+							  ],
+							</script>
+						</code></pre>
+						<p>
+							This places creates the perameters for the scaler year based on the data. For this scale... The range is from year 1850-2000 with a step size of 10. <em><a href="https://vega.github.io/vega/docs/signals/">"bind"</a></em>
+						</P>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							Configuring visualization to react to our input
+						</h3>
+						<pre><code data-trim data-line-numbers= 4-6>
+							<script type="text/template">
+								{
+						      "name": "popYear",
+						      "source": "population",
+						      "transform": [
+						        {"type": "filter", "expr": "datum.year == year"}
+						      ]
+						    },
+							</script>
+						</code></pre>
+						<p>
+							This filters the population year of our data equal to the year chosen (our input).
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							Deep Dive
+						</h3>
+						<pre><code data-trim data-line-numbers= 4-6>
+							<script type="text/template">
+						    {
+						      "name": "males",
+						      "source": "popYear",
+						      "transform": [
+						        {"type": "filter", "expr": "datum.sex == 1"}
+						      ]
+						    },
+							</script>
+						</code></pre>
+						<p>
+							Within our population our dataset has sub categories of population that also need to be filtered to the input. For further filtering, we are calling the<em><a href="https://vega.github.io/vega/docs/expressions/"> expression </a></em>of males = 1. 
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							Deep Dive
+						</h3>
+						<pre><code data-trim data-line-numbers= 4-6>
+							<script type="text/template">
+						    {
+						      "name": "females",
+						      "source": "popYear",
+						      "transform": [
+						        {"type": "filter", "expr": "datum.sex == 2"}
+						      ]
+						    },
+							</script>
+						</code></pre>
+						<p>
+							We are doing the same opperation for the feamles of the dataset, however, we are setting them equal to an expr of 2. females = 2.
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							Deep Dive
+						</h3>
+						<pre><code data-trim data-line-numbers= 4-6>
+							<script type="text/template">
+						    {
+						      "name": "ageGroups",
+						      "source": "population",
+						      "transform": [
+						        { "type": "aggregate", "groupby": ["age"] }
+						      ]
+						    }
+						  ],
+							</script>
+						</code></pre>
+						<p>
+							This is where all the prior code is compiled and outputed to react to our users desired input. We are going to<em><a href="https://vega.github.io/vega/docs/transforms/"> transform</a></em> the data to average by age according to the input year. 
+						</p>
+					</section>
+				</section>
+
+				<section>
+					<section data-auto-animate>
+						<h3>
+							Trouble Shooting
+						</h3>
+
+						<p>
+							The biggest problem that I faced was making sure that my comma placement was tidy. Good coding hygene will help eliminate most configuration problems. 
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							Trouble Shooting
+						</h3>
+						<pre><code data-trim data-line-numbers= 3>
+							<script type="text/template">
+								"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+							  "width": 300, "height": 200,
+							  "data": {"url": "https://vega.github.io/vega-datasets/data/unemployment-across-industries.json"},
+							  "mark": "area",
+							</script>
+						</code></pre>
+
+						<p>
+							Another big problem of mine was making sure that I had the correct url hyperlink pathway to the github IO.
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							Trouble Shooting
+						</h3>
+						<pre><code data-trim data-line-numbers= 3>
+							<script type="text/template">
+								"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+							  "width": 300, "height": 200,
+							  "data": {"url": "https://vega.github.io/vega-datasets/data/unemployment-across-industries.json"},
+							  "mark": "area",
+							</script>
+						</code></pre>
+
+						<p>
+							<em>Within the url link</em>. Using the wrong link will cause a 404 error and your visualization within your slide will apear empty (only chart skeleton apears). 
+						</p>
+					</section>
+					<section data-auto-animate>
+						<h3>
+							Trouble Shooting
+						</h3>
+						<pre><code data-trim data-line-numbers= 2>
+							<script type="text/template">
+								// GitHub IO file pathway
+								https://vega.github.io/vega-datasets/
+							</script>
+						</code></pre>
+
+						<p>
+							Using this before the data/fileName.JSON will allow you to acces the correct file within the GitHub repository. 
+						</p>
+					</section>
+				</section>
+				
+				
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/notes/notes.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.min.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				slideNumber: 'c/t',
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <style id="vega-tooltip-style"></style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- vega scripts and links -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@3"></script>
+
+    <style id="vega-embed-style"></style>
+    <style type="text/css">
+      h1{
+        color: rgb(58,134,183);
+      }
+      p{
+        text-indent: 2em;
+      }
+      body{
+        background-color: rgb(220, 134, 157);
+      }
+      img{
+        height: 15%;
+        width: 15%;
+        margin-left: 40%;
+       
+      }
+    </style>
+
+    <title>DogeCoin Cost?</title>
+  </head>
+  <body>
+   
+
+    <div class="container">
+       <h1 class="text-center">How Costly is DogeCoin?</h1>
+
+       <hr>
+
+       <img src="dogecoin_pic.png" alt="dogecoin picture" class="text-center">
+
+       <hr>
+
+      <p>
+          In 2013, Billy Marcus and Jackson Palmer created Dogecoin. It was initially created as a joke, however, the cryptocurrency price and volume have increased significantly over the past few months, specifically. However, the cryptocurrency created by software engineers Billy Marcus and Jackson Palmer has a potential environmental energy crisis on its hands. This is due to the vast amount of energy that is necessary for mining, which requires solving complex mathematical problems and is accomplished by a specialized computer software called Application Specific Integrated Circuits (ASIC). In comparison, Bitcoin’s annual energy consumption is comparable to some entire countries, such as Argentina and Ukraine. Bitcoin produces 36.95 megatons of carbon dioxide (CO2) annually (comparable to New Zealand) and it is estimated that in 30 years Bitcoin could alone increase global temperatures 2 degrees Celsius.
+      </p>
+
+      <p>
+        To find correlation or causation that Dogecoin has a similar environmental impact as its fellow currencies (bitcoin, etherium). The first visualization is the market close price of Dogecoin which is filtered from 2018 to current. This graph illustrates the drastic popularity that Dogecoin attained quickly. Before 2021, Dogecoin had a steady flat line of a .01 price point. Following 2021, their coin started at ~.018 and reached a max of ~.37 recently on April 4th. Essentially, Dogecoin is new and had roughly 95% of its price and volume increase over the past six months. 
+      </p>
+      <div id="price_vis"></div>
+                
+              
+              <script type="text/javascript">
+                var spec ={
+                  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                  "width": 1000,
+                  "height": 500,
+                  "description": "Google's stock price over time.",
+                  "data": {"url": "https://zemc1520.github.io/50th_try_AHHHHHH.github.io/DOGE-USD.csv"},
+
+                  "mark": "line",
+                  "encoding": {
+                    "x": {"field": "Date", "type": "temporal"},
+                    "y": {"field": "Close", "title": "Price", "type": "quantitative"}
+                  }
+                };
+
+  /* JSON dump of your chart's spec */
+                var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+                vegaEmbed("#price_vis", spec, opt);
+          // More info about initialization & config:
+                // - https://revealjs.com/initialization/
+                // - https://revealjs.com/config/
+              </script>
+      <p>
+        Furthermore, Dogecoin had similar increases in their volume through the same period. Seen in visuals two and three. The third visual is a condensed version of the chart to illustrate the drastic volume increases following 2021. Volume is the number of coin transactions per market day. Essentially, this indicates an influx of new coin, selling, and buying of Dogecoin. While this indicates the recent success of Dogecoin, this also poses environmental questions of their impact since 2021. A rush of activity on a coin base without the proper infrastructure to mitigate environmental costs manifests problematic situations. 
+      </p>
+      <div id="vis1"></div>
+                
+              
+              <script type="text/javascript">
+                var spec = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                  "width": 1000,
+                  "height": 500,
+                  "description": "Google's stock price over time.",
+                  "data": {"url": "https://zemc1520.github.io/50th_try_AHHHHHH.github.io/DOGE-USD.csv"},
+
+                  "mark": "line",
+                  "encoding": {
+                    "x": {"field": "Date", "type": "temporal"},
+                    "y": {"field": "Volume", "title": "Volume (# of Crypto traded/exchanged)", "type": "quantitative"}
+                  }
+                };
+
+
+            /* JSON dump of your chart's spec */
+                var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+                vegaEmbed("#vis1", spec, opt);
+          // More info about initialization & config:
+                // - https://revealjs.com/initialization/
+                // - https://revealjs.com/config/
+              </script>
+      <div id="close_vis"></div>
+              
+            
+            <script type="text/javascript">
+              var spec = {
+                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                "width": 1000,
+                "height": 500,
+                "description": "Google's stock price over time.",
+                "data": {"url": "https://zemc1520.github.io/50th_try_AHHHHHH.github.io/DOGE-USD2020+.csv"},
+
+                "mark": "line",
+                "encoding": {
+                  "x": {"field": "Date", "type": "temporal"},
+                  "y": {"field": "Volume", "title": "Volume (# of Crypto traded/exchanged)", "type": "quantitative"}
+                }
+              };
+
+
+          /* JSON dump of your chart's spec */
+              var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+              vegaEmbed("#close_vis", spec, opt);
+        // More info about initialization & config:
+              // - https://revealjs.com/initialization/
+              // - https://revealjs.com/config/
+            </script>
+      <p>
+        The fourth visual is the expected Terawatt-hour (TWh) that ethereum uses per day, displayed over month periods. Ethereum is a comparable coin base because their mining practices and costs are similar; furthermore, etherium and Dogecoin are manipulated with similar financial ideologies of an active currency. As expected, with an increase in activity and price per coin the Terawatt-hours increased dramatically. This translates to buying massive amounts of energy, supply consumption, from environmentally damaging sources because they are cheaper. 
+      </p>
+
+       <div id="vis2"></div>
+                
+              
+              <script type="text/javascript">
+                var spec = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                  "width": 1000,
+                  "height": 500,
+                  "description": "Google's stock price over time.",
+                  "data": {"url": "https://zemc1520.github.io/50th_try_AHHHHHH.github.io/EECI_TWh - TWh per Year.csv"},
+
+                  "mark": "line",
+                  "encoding": {
+                    "title": "Est. TWh of ethereum",
+                    "x": {"field": "Date", "type": "temporal"},
+                    "y": {"field": "Estimated TWh per Year", "title": "Estimated TWh per month", "type": "quantitative"}
+                  }
+                };
+
+
+            /* JSON dump of your chart's spec */
+                var opt = {"renderer": "canvas", "actions": false};  /* Options for the embedding */
+                vegaEmbed("#vis2", spec, opt);
+          // More info about initialization & config:
+                // - https://revealjs.com/initialization/
+                // - https://revealjs.com/config/
+              </script>
+
+      <p>
+        Overall, coin bases have a tremendously negative impact on our environment because their high energy consumption causes cryptocurrencies to source energy from non-renewable sources. While a majority of their energy comes from renewable sources, however, many people are skeptical of this finding and say it does not match other calculations that have been done. Using renewables for mining can also be complicated. For example, hydropower has become more popular for cryptocurrencies since it is cheap, however, it often has to be backed up by fossil fuels because of large regional and seasonal differences in its availability. Ultimately, cryptocurrencies need to become more transparent and responsible for how they purchase their energy and find new and innovative ways to keep energy levels lower. 
+      </p>
+     </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
